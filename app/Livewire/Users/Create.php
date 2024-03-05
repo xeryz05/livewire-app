@@ -17,7 +17,7 @@ class Create extends Component
         $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|confirmed'
+            'password' => 'required|string|min:8'
         ]);
         $user = User::create([
             'name' => $this->name,
@@ -28,6 +28,8 @@ class Create extends Component
         // $this->reset();
 
         session()->flash('message', 'User created successfully.');
+
+        return redirect()->route('users.index');
     }
 
     public function render()

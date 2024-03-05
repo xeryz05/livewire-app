@@ -1,5 +1,5 @@
 @section('title')
-Create Post - Belajar Livewire 3 di SantriKoding.com
+    Create Post - Belajar Livewire 3 di SantriKoding.com
 @endsection
 
 <div class="container mt-5 mb-5">
@@ -11,37 +11,40 @@ Create Post - Belajar Livewire 3 di SantriKoding.com
 
                         <div class="form-group mb-4">
                             <label class="fw-bold">Name</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" wire:model="name" placeholder="Masukkan Nama User">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                wire:model="name" placeholder="Masukkan Nama User">
 
                             <!-- error message untuk name -->
                             @error('name')
-                            <div class="alert alert-danger mt-2">
-                                {{ $message }}
-                            </div>
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="form-group mb-4">
                             <label class="fw-bold">Email</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" wire:model="email" placeholder="Masukkan Judul Email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                wire:model="email" placeholder="Masukkan Judul Email">
 
                             <!-- error message untuk email -->
                             @error('email')
-                            <div class="alert alert-danger mt-2">
-                                {{ $message }}
-                            </div>
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="form-group mb-4">
                             <label class="fw-bold">Password</label>
-                            <input type="password" class="form-control @error('password') is-invalid @enderror" wire:model="password" placeholder="Masukkan Judul Post">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                wire:model="password" placeholder="Masukkan password">
 
                             <!-- error message untuk password -->
                             @error('password')
-                            <div class="alert alert-danger mt-2">
-                                {{ $message }}
-                            </div>
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 

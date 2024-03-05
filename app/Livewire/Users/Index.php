@@ -11,4 +11,16 @@ class Index extends Component
     {
         return view('livewire.users.index', ['users' => User::latest()->paginate(5)]);
     }
+
+    public function destroy($id)
+    {
+        $user = User::destroy($id);
+
+        //flash message
+        session()->flash('message', 'Data Berhasil Dihapus.');
+
+        //redirect
+        return redirect()->route('users.index');
+
+    }
 }
