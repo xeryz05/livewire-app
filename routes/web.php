@@ -23,3 +23,5 @@ Route::get('/posts/edit/{id}', App\Livewire\Posts\Edit::class)->name('posts.edit
 Route::get('/users', App\Livewire\Users\Index::class)->name('users.index');
 Route::get('/users/create', App\Livewire\Users\Create::class)->name('users.create');
 Route::get('users/edit/{id}',App\Livewire\Users\Edit::class)->name( 'users.edit');
+
+Route::get('/dashboard', App\Livewire\Dashboard\Index::class)->name('dashboard.index');

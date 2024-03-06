@@ -14,10 +14,11 @@
             @endif
             <!-- end flash message -->
 
-            <a href="{{ route('users.create') }}" wire:navigate
+            <a href="{{ route('posts.create') }}" wire:navigate
                 class="btn btn-md btn-success rounded shadow-sm border-0 mb-3">ADD NEW User</a>
             <div class="card border-0 rounded shadow-sm">
                 <div class="card-body">
+                    <input type="text" class="form-control" wire:model.live="search" placeholder="Masukkan Nama">
                     <table class="table table-bordered">
                         <thead class="bg-dark text-white">
                             <tr>
@@ -30,7 +31,7 @@
                         <tbody>
                             @forelse ($users as $user)
                                 <tr>
-                                    <td>{{ $user->name }}</td>
+                                    <td wire:key="{{ $user->name }}">{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->password }}</td>
                                     <td class="text-center">
@@ -47,7 +48,8 @@
                             @endforelse
                         </tbody>
                     </table>
-                    {{ $users->links('vendor.pagination.bootstrap-5') }}
+                    {{-- {{ $users->links('vendor.pagination.bootstrap-5') }} --}}
+                    {{ $users->links() }}
                 </div>
             </div>
         </div>

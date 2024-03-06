@@ -10,6 +10,11 @@ class Index extends Component
 {
     use WithPagination;
 
+    public $search = '';
+
+    // protected $paginationTheme = 'bootstrap';
+
+
        public function destroy($id)
     {
         //destroy
@@ -24,7 +29,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.posts.index', [
-            'posts' => Post::latest()->paginate(5)
+            'posts' => Post::where('title', 'like', '%'. $this->search. '%')->paginate(5)
         ]);
     }
 }
